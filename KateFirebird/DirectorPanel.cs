@@ -21,7 +21,7 @@ namespace KateFirebird
             Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name);
             Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name);
             Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct(); 
-            Cb4Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct();
+            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct();
             Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName);
 
 
@@ -29,30 +29,51 @@ namespace KateFirebird
 
         private void BtnFirstReq_Click(object sender, EventArgs e)
         {
-            //grid
+            if (!int.TryParse(Tb1WeightFrom.Text, out int weigthFrom))
+            {
+                MessageBox.Show($"incorrect number in {Tb1WeightFrom.Name} ");
+                return;
+            }
+
+            if (!int.TryParse(Tb1WeightTo.Text, out int weigthTo))
+            {
+                MessageBox.Show($"incorrect number in {Tb1WeightTo.Name} ");
+                return;
+            }
+
+            if (weigthFrom > weigthTo)
+            {
+                MessageBox.Show("from bigger then to. swapped");
+                weigthFrom += weigthTo;
+                weigthTo = weigthFrom - weigthTo;
+                weigthFrom = weigthFrom - weigthTo;
+            }
+
+            var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, Cb1Breed.SelectedIndex, (int)Nud1Age.Value);
+            MessageBox.Show(String.Concat(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт{x.EddCount}" ))); ;
         }
 
         private void BtnSecondReq_Click(object sender, EventArgs e)
         {
-            //цех, с наибольшим количеством кур определенной породы;
-            MessageBox.Show(Data.Chickens.Where(x=> x.BreedId == Cb2Breed.SelectedIndex).GroupBy(x => Data.Cells.Where(c => c.Id == x.CellId)).Max().ToString());
-            MessageBox.Show(Data.Cells.Join(Data.Chickens.Where(x => x.BreedId == Cb2Breed.SelectedIndex) , x => x.Id, x => x.CellId, (x, y) => x)
-                                              .GroupBy(x => x.DepartmentNum)
-                                              .Max()
-                                              .FirstOrDefault().DepartmentNum.ToString()) ;
-
+            MessageBox.Show(RequestLogic.GetDepartmentWithBreed(Data, Cb2Breed.SelectedIndex)?.ToString() ?? "NoData");
         }
+
+
+
         private void BtnThirdReq_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(String.Concat(Environment.NewLine, RequestLogic.GetCellByAgeAndDiet(Data, (int) Nud3Age.Value, Cb3Diet.SelectedIndex)));
         }
+
+
         private void BtnForthReq_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(RequestLogic.GetEggsCountByWorker(Data, Cb4Worker.SelectedIndex)?.ToString() ?? "NoData");
         }
 
         private void BtnFifthReq_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(RequestLogic.GetDepartmentWithMaxEggs(Data)?.ToString() ?? "NoData");
 
         }
     }
