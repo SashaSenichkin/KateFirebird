@@ -8,6 +8,12 @@ namespace KateFirebird
 {
     static class Program
     {
+        public static IDataProvider Data;
+        public static Form DirPanel ;
+        public static Form AdminPanel;
+        public static Form StartWin;
+
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -17,7 +23,11 @@ namespace KateFirebird
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DirectorPanel());
+             Data = new RandomRata();
+             DirPanel = new DirectorPanel();
+             AdminPanel = new AdminPanel();
+             StartWin = new StartWin();
+            Application.Run(StartWin);
         }
     }
 }
