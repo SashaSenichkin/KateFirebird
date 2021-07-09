@@ -17,5 +17,27 @@ namespace KateFirebird
             InitializeComponent();
         }
 
+        private void BtnFirstReq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSecondReq_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnThirdReq_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnForthReq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnFifthReq_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
