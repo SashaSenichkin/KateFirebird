@@ -21,7 +21,7 @@ namespace KateFirebird
                 Name = "breed " + count++,
                 AvgProduction = r.Next(0, 10),
                 AvgWeight = r.Next(0, 10),
-                DietId = r.Next(0, dietCount)
+                DietId = r.Next(1, dietCount)
             };
         }
     }

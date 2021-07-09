@@ -19,10 +19,10 @@ namespace KateFirebird
             return new Chicken()
             {
                 Id = count++,
-                Weight = r.Next(0, 10),
-                Age = r.Next(0, 10),
-                BreedId = r.Next(0, breedCount),
-                EddCount = r.Next(0, 10),
+                Weight = r.Next(2, 10),
+                Age = r.Next(0, 3),
+                BreedId = r.Next(1, breedCount),
+                EddCount = r.Next(2, 10),
                 CellId = cellId,
             };
         }

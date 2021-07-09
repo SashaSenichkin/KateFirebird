@@ -18,10 +18,10 @@ namespace KateFirebird
             return new Cell()
             {
                 Id = count++,
-                WorkerId = r.Next(0, workerCount),
-                CellNum = r.Next(0, 10),
-                RowNum = r.Next(0, 10),
-                DepartmentNum = r.Next(0, 10)
+                WorkerId = r.Next(1, workerCount),
+                CellNum = r.Next(1, 10),
+                RowNum = r.Next(1, 10),
+                DepartmentNum = r.Next(1, 10)
             };
         }
     }
