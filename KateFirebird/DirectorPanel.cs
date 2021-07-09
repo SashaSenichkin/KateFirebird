@@ -13,18 +13,16 @@ namespace KateFirebird
     public partial class DirectorPanel : Form
     {
 
-        IDataProvider Data = new RandomRata();
+        IDataProvider Data = Program.Data;
 
         public DirectorPanel()
         {
             InitializeComponent();
-            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name);
-            Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name);
-            Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct(); 
-            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct();
-            Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName);
-
-
+            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
+            Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
+            Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList(); 
+            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct().ToList();
+            Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName).ToList();
         }
 
         private void BtnFirstReq_Click(object sender, EventArgs e)
@@ -50,7 +48,7 @@ namespace KateFirebird
             }
 
             var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, Cb1Breed.SelectedIndex, (int)Nud1Age.Value);
-            MessageBox.Show(String.Concat(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт{x.EddCount}" ))); ;
+            MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт{x.EddCount}" ).ToArray())); ;
         }
 
         private void BtnSecondReq_Click(object sender, EventArgs e)
@@ -62,7 +60,10 @@ namespace KateFirebird
 
         private void BtnThirdReq_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(String.Concat(Environment.NewLine, RequestLogic.GetCellByAgeAndDiet(Data, (int) Nud3Age.Value, Cb3Diet.SelectedIndex)));
+            MessageBox.Show(String.Join(Environment.NewLine, 
+                                        RequestLogic.GetCellByAgeAndDiet(Data, 
+                                                                        (int) Nud3Age.Value, 
+                                                                        Cb3Diet.SelectedIndex).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}")));
         }
 
 
