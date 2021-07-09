@@ -1,7 +1,7 @@
 ﻿
 namespace KateFirebird
 {
-    partial class Form1
+    partial class DirectorPanel
     {
         /// <summary>
         ///  Required designer variable.
@@ -272,7 +272,7 @@ namespace KateFirebird
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
             this.pictureBox1.Location = new System.Drawing.Point(-1, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 10);
@@ -283,7 +283,7 @@ namespace KateFirebird
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
             this.pictureBox2.Location = new System.Drawing.Point(-1, 150);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(800, 10);
@@ -294,7 +294,7 @@ namespace KateFirebird
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
             this.pictureBox3.Location = new System.Drawing.Point(-1, 232);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(800, 10);
@@ -305,7 +305,7 @@ namespace KateFirebird
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
             this.pictureBox4.Location = new System.Drawing.Point(-1, 316);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(800, 10);
