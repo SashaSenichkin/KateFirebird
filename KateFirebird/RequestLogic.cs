@@ -29,6 +29,7 @@ namespace KateFirebird
         /// <returns></returns>
         public static int? GetDepartmentWithBreed(IDataProvider data, int breedId)
         {
+            //Fail Icomparable req
             return data.Cells.Join(data.Chickens.Where(x => x.BreedId == breedId), x => x.Id, x => x.CellId, (x, y) => x)
                                                .GroupBy(x => x.DepartmentNum)
                                                .Max()
@@ -70,6 +71,17 @@ namespace KateFirebird
         {
             var maxEggsCell = data.Chickens.OrderByDescending(x => x.EddCount).ToList().FirstOrDefault();
             return data.Cells.FirstOrDefault(x => x.Id == maxEggsCell?.Id)?.DepartmentNum;
+        }
+
+        /// <summary>
+        /// выдачи справки о номере диеты для курицы указанной породы
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="breedId"></param>
+        /// <returns></returns>
+        public static int? GetDietByBreedId(IDataProvider data, int breedId)
+        {
+            return data.Breeds.First(x => x.Id == breedId).DietId;
         }
     }
 }
