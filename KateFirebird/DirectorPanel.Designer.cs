@@ -48,8 +48,8 @@ namespace KateFirebird
             this.BtnForthReq = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnFifthReq = new System.Windows.Forms.Button();
-            this.Nud4Age = new System.Windows.Forms.NumericUpDown();
-            this.Cb4Diet = new System.Windows.Forms.ComboBox();
+            this.Nud3Age = new System.Windows.Forms.NumericUpDown();
+            this.Cb3Diet = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,7 @@ namespace KateFirebird
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Age)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nud4Age)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud3Age)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -230,25 +230,25 @@ namespace KateFirebird
             this.BtnFifthReq.UseVisualStyleBackColor = true;
             this.BtnFifthReq.Click += new System.EventHandler(this.BtnFifthReq_Click);
             // 
-            // Nud4Age
+            // Nud3Age
             // 
-            this.Nud4Age.Location = new System.Drawing.Point(13, 193);
-            this.Nud4Age.Name = "Nud4Age";
-            this.Nud4Age.Size = new System.Drawing.Size(120, 23);
-            this.Nud4Age.TabIndex = 20;
-            this.Nud4Age.Value = new decimal(new int[] {
+            this.Nud3Age.Location = new System.Drawing.Point(13, 193);
+            this.Nud3Age.Name = "Nud3Age";
+            this.Nud3Age.Size = new System.Drawing.Size(120, 23);
+            this.Nud3Age.TabIndex = 20;
+            this.Nud3Age.Value = new decimal(new int[] {
             2,
             0,
             0,
             0});
             // 
-            // Cb4Diet
+            // Cb3Diet
             // 
-            this.Cb4Diet.FormattingEnabled = true;
-            this.Cb4Diet.Location = new System.Drawing.Point(252, 193);
-            this.Cb4Diet.Name = "Cb4Diet";
-            this.Cb4Diet.Size = new System.Drawing.Size(121, 23);
-            this.Cb4Diet.TabIndex = 21;
+            this.Cb3Diet.FormattingEnabled = true;
+            this.Cb3Diet.Location = new System.Drawing.Point(252, 193);
+            this.Cb3Diet.Name = "Cb3Diet";
+            this.Cb3Diet.Size = new System.Drawing.Size(121, 23);
+            this.Cb3Diet.TabIndex = 21;
             // 
             // label6
             // 
@@ -272,7 +272,7 @@ namespace KateFirebird
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(209)))), ((int)(((byte)(234)))));
             this.pictureBox1.Location = new System.Drawing.Point(-1, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 10);
@@ -283,7 +283,7 @@ namespace KateFirebird
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(209)))), ((int)(((byte)(234)))));
             this.pictureBox2.Location = new System.Drawing.Point(-1, 150);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(800, 10);
@@ -294,7 +294,7 @@ namespace KateFirebird
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(209)))), ((int)(((byte)(234)))));
             this.pictureBox3.Location = new System.Drawing.Point(-1, 232);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(800, 10);
@@ -305,14 +305,14 @@ namespace KateFirebird
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(185, 209, 234);
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(209)))), ((int)(((byte)(234)))));
             this.pictureBox4.Location = new System.Drawing.Point(-1, 316);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(800, 10);
             this.pictureBox4.TabIndex = 27;
             this.pictureBox4.TabStop = false;
             // 
-            // Form1
+            // DirectorPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -323,8 +323,8 @@ namespace KateFirebird
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Cb4Diet);
-            this.Controls.Add(this.Nud4Age);
+            this.Controls.Add(this.Cb3Diet);
+            this.Controls.Add(this.Nud3Age);
             this.Controls.Add(this.BtnFifthReq);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BtnForthReq);
@@ -344,10 +344,10 @@ namespace KateFirebird
             this.Controls.Add(this.Nud1Age);
             this.Controls.Add(this.Cb1Breed);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "DirectorPanel";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Age)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nud4Age)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud3Age)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -378,8 +378,8 @@ namespace KateFirebird
         private System.Windows.Forms.Button BtnForthReq;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnFifthReq;
-        private System.Windows.Forms.NumericUpDown Nud4Age;
-        private System.Windows.Forms.ComboBox Cb4Diet;
+        private System.Windows.Forms.NumericUpDown Nud3Age;
+        private System.Windows.Forms.ComboBox Cb3Diet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
