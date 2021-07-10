@@ -48,7 +48,11 @@ namespace KateFirebird
             }
 
             var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, Cb1Breed.SelectedIndex, (int)Nud1Age.Value);
-            MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт{x.EddCount}" ).ToArray())); ;
+            if (chickens.Any())
+                MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт {x.EddCount} яиц").ToArray()));
+            else
+                MessageBox.Show("не найдено ни одной куры, удолетворяющей запросу");
+
         }
 
         private void BtnSecondReq_Click(object sender, EventArgs e)
@@ -60,10 +64,15 @@ namespace KateFirebird
 
         private void BtnThirdReq_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(String.Join(Environment.NewLine, 
-                                        RequestLogic.GetCellByAgeAndDiet(Data, 
-                                                                        (int) Nud3Age.Value, 
-                                                                        Cb3Diet.SelectedIndex).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}")));
+            var result = RequestLogic.GetCellByAgeAndDiet(Data,
+                                                         (int)Nud3Age.Value,
+                                                          Cb3Diet.SelectedIndex).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}");
+
+            if (result.Any())
+                MessageBox.Show(String.Join(Environment.NewLine, result));
+            else
+                MessageBox.Show("не найдено ни одной клетки, удолетворяющей запросу");
+
         }
 
 
@@ -75,7 +84,6 @@ namespace KateFirebird
         private void BtnFifthReq_Click(object sender, EventArgs e)
         {
             MessageBox.Show(RequestLogic.GetDepartmentWithMaxEggs(Data)?.ToString() ?? "NoData");
-
         }
     }
 }

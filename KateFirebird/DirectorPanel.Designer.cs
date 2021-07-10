@@ -90,9 +90,9 @@ namespace KateFirebird
             // 
             // BtnFirstReq
             // 
-            this.BtnFirstReq.Location = new System.Drawing.Point(562, 33);
+            this.BtnFirstReq.Location = new System.Drawing.Point(540, 33);
             this.BtnFirstReq.Name = "BtnFirstReq";
-            this.BtnFirstReq.Size = new System.Drawing.Size(194, 23);
+            this.BtnFirstReq.Size = new System.Drawing.Size(248, 23);
             this.BtnFirstReq.TabIndex = 3;
             this.BtnFirstReq.Text = "посмотреть количество яиц";
             this.BtnFirstReq.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@ namespace KateFirebird
             // 
             // BtnSecondReq
             // 
-            this.BtnSecondReq.Location = new System.Drawing.Point(562, 115);
+            this.BtnSecondReq.Location = new System.Drawing.Point(540, 115);
             this.BtnSecondReq.Name = "BtnSecondReq";
-            this.BtnSecondReq.Size = new System.Drawing.Size(194, 23);
+            this.BtnSecondReq.Size = new System.Drawing.Size(248, 23);
             this.BtnSecondReq.TabIndex = 12;
             this.BtnSecondReq.Text = "посмотреть количество кур";
             this.BtnSecondReq.UseVisualStyleBackColor = true;
@@ -185,9 +185,9 @@ namespace KateFirebird
             // 
             // BtnThirdReq
             // 
-            this.BtnThirdReq.Location = new System.Drawing.Point(562, 193);
+            this.BtnThirdReq.Location = new System.Drawing.Point(540, 193);
             this.BtnThirdReq.Name = "BtnThirdReq";
-            this.BtnThirdReq.Size = new System.Drawing.Size(194, 23);
+            this.BtnThirdReq.Size = new System.Drawing.Size(248, 23);
             this.BtnThirdReq.TabIndex = 15;
             this.BtnThirdReq.Text = "посмотреть клетки";
             this.BtnThirdReq.UseVisualStyleBackColor = true;
@@ -203,9 +203,9 @@ namespace KateFirebird
             // 
             // BtnForthReq
             // 
-            this.BtnForthReq.Location = new System.Drawing.Point(562, 273);
+            this.BtnForthReq.Location = new System.Drawing.Point(540, 273);
             this.BtnForthReq.Name = "BtnForthReq";
-            this.BtnForthReq.Size = new System.Drawing.Size(194, 23);
+            this.BtnForthReq.Size = new System.Drawing.Size(248, 23);
             this.BtnForthReq.TabIndex = 17;
             this.BtnForthReq.Text = "посмотреть количество яиц";
             this.BtnForthReq.UseVisualStyleBackColor = true;
@@ -222,11 +222,11 @@ namespace KateFirebird
             // 
             // BtnFifthReq
             // 
-            this.BtnFifthReq.Location = new System.Drawing.Point(562, 346);
+            this.BtnFifthReq.Location = new System.Drawing.Point(540, 346);
             this.BtnFifthReq.Name = "BtnFifthReq";
-            this.BtnFifthReq.Size = new System.Drawing.Size(194, 23);
+            this.BtnFifthReq.Size = new System.Drawing.Size(248, 23);
             this.BtnFifthReq.TabIndex = 19;
-            this.BtnFifthReq.Text = "номер клетки где больше яиц";
+            this.BtnFifthReq.Text = "номер цеха с клеткой, где больше яиц";
             this.BtnFifthReq.UseVisualStyleBackColor = true;
             this.BtnFifthReq.Click += new System.EventHandler(this.BtnFifthReq_Click);
             // 
