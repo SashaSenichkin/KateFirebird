@@ -32,7 +32,7 @@ namespace KateFirebird
             //Fail Icomparable req
             return data.Cells.Join(data.Chickens.Where(x => x.BreedId == breedId), x => x.Id, x => x.CellId, (x, y) => x)
                                                .GroupBy(x => x.DepartmentNum)
-                                               .Max()
+                                               .OrderByDescending(x => x.Count()).ToList()[0]
                                                .FirstOrDefault()?.DepartmentNum;
         }
 
