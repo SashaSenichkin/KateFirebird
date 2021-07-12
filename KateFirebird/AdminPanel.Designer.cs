@@ -52,9 +52,6 @@ namespace KateFirebird
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Cb1CellNum = new System.Windows.Forms.ComboBox();
-            this.Cb1Row = new System.Windows.Forms.ComboBox();
-            this.Cb1Dep = new System.Windows.Forms.ComboBox();
             this.Cbox1IsAddCell = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -63,6 +60,9 @@ namespace KateFirebird
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.Nud4NewWeight = new System.Windows.Forms.NumericUpDown();
+            this.Nud1Dep = new System.Windows.Forms.NumericUpDown();
+            this.Nud1Row = new System.Windows.Forms.NumericUpDown();
+            this.Nud1CellRow = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Weight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Age)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +70,9 @@ namespace KateFirebird
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud3NewWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud4NewWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1Dep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1Row)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1CellRow)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn1AddNewChicken
@@ -285,32 +288,6 @@ namespace KateFirebird
             this.label11.TabIndex = 26;
             this.label11.Text = "Номер цеха";
             // 
-            // Cb1CellNum
-            // 
-            this.Cb1CellNum.FormattingEnabled = true;
-            this.Cb1CellNum.Location = new System.Drawing.Point(359, 97);
-            this.Cb1CellNum.Name = "Cb1CellNum";
-            this.Cb1CellNum.Size = new System.Drawing.Size(121, 23);
-            this.Cb1CellNum.TabIndex = 25;
-            // 
-            // Cb1Row
-            // 
-            this.Cb1Row.FormattingEnabled = true;
-            this.Cb1Row.Location = new System.Drawing.Point(190, 97);
-            this.Cb1Row.Name = "Cb1Row";
-            this.Cb1Row.Size = new System.Drawing.Size(121, 23);
-            this.Cb1Row.TabIndex = 24;
-            this.Cb1Row.SelectedIndexChanged += new System.EventHandler(this.Cb1Row_SelectedIndexChanged);
-            // 
-            // Cb1Dep
-            // 
-            this.Cb1Dep.FormattingEnabled = true;
-            this.Cb1Dep.Location = new System.Drawing.Point(23, 97);
-            this.Cb1Dep.Name = "Cb1Dep";
-            this.Cb1Dep.Size = new System.Drawing.Size(121, 23);
-            this.Cb1Dep.TabIndex = 23;
-            this.Cb1Dep.SelectedIndexChanged += new System.EventHandler(this.Cb1Dep_SelectedIndexChanged);
-            // 
             // Cbox1IsAddCell
             // 
             this.Cbox1IsAddCell.AutoSize = true;
@@ -396,11 +373,50 @@ namespace KateFirebird
             0,
             0});
             // 
+            // Nud1Dep
+            // 
+            this.Nud1Dep.Location = new System.Drawing.Point(23, 97);
+            this.Nud1Dep.Name = "Nud1Dep";
+            this.Nud1Dep.Size = new System.Drawing.Size(79, 23);
+            this.Nud1Dep.TabIndex = 37;
+            this.Nud1Dep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // Nud1Row
+            // 
+            this.Nud1Row.Location = new System.Drawing.Point(190, 97);
+            this.Nud1Row.Name = "Nud1Row";
+            this.Nud1Row.Size = new System.Drawing.Size(79, 23);
+            this.Nud1Row.TabIndex = 38;
+            this.Nud1Row.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // Nud1CellRow
+            // 
+            this.Nud1CellRow.Location = new System.Drawing.Point(359, 97);
+            this.Nud1CellRow.Name = "Nud1CellRow";
+            this.Nud1CellRow.Size = new System.Drawing.Size(79, 23);
+            this.Nud1CellRow.TabIndex = 39;
+            this.Nud1CellRow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 391);
+            this.Controls.Add(this.Nud1CellRow);
+            this.Controls.Add(this.Nud1Row);
+            this.Controls.Add(this.Nud1Dep);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.Nud4NewWeight);
             this.Controls.Add(this.label12);
@@ -412,9 +428,6 @@ namespace KateFirebird
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.Cb1CellNum);
-            this.Controls.Add(this.Cb1Row);
-            this.Controls.Add(this.Cb1Dep);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -437,6 +450,7 @@ namespace KateFirebird
             this.Controls.Add(this.Btn1AddNewChicken);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.Shown += new System.EventHandler(this.AdminPanel_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Weight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Age)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -444,6 +458,9 @@ namespace KateFirebird
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud3NewWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud4NewWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1Dep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1Row)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud1CellRow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,9 +491,6 @@ namespace KateFirebird
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox Cb1CellNum;
-        private System.Windows.Forms.ComboBox Cb1Row;
-        private System.Windows.Forms.ComboBox Cb1Dep;
         private System.Windows.Forms.CheckBox Cbox1IsAddCell;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -485,5 +499,8 @@ namespace KateFirebird
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown Nud4NewWeight;
+        private System.Windows.Forms.NumericUpDown Nud1Dep;
+        private System.Windows.Forms.NumericUpDown Nud1Row;
+        private System.Windows.Forms.NumericUpDown Nud1CellRow;
     }
 }

@@ -346,6 +346,7 @@ namespace KateFirebird
             this.Controls.Add(this.label1);
             this.Name = "DirectorPanel";
             this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.DirectorPanel_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Nud1Age)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud3Age)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
