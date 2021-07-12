@@ -121,6 +121,7 @@ namespace KateFirebird
             this.Cb3Id.Location = new System.Drawing.Point(23, 262);
             this.Cb3Id.Name = "Cb3Id";
             this.Cb3Id.Size = new System.Drawing.Size(121, 23);
+            this.Cb3Id.Sorted = true;
             this.Cb3Id.TabIndex = 5;
             // 
             // Cb4Dep
@@ -129,6 +130,7 @@ namespace KateFirebird
             this.Cb4Dep.Location = new System.Drawing.Point(23, 347);
             this.Cb4Dep.Name = "Cb4Dep";
             this.Cb4Dep.Size = new System.Drawing.Size(90, 23);
+            this.Cb4Dep.Sorted = true;
             this.Cb4Dep.TabIndex = 6;
             this.Cb4Dep.SelectedIndexChanged += new System.EventHandler(this.Cb4Dep_SelectedIndexChanged);
             // 
@@ -138,6 +140,7 @@ namespace KateFirebird
             this.Cb4Row.Location = new System.Drawing.Point(130, 348);
             this.Cb4Row.Name = "Cb4Row";
             this.Cb4Row.Size = new System.Drawing.Size(101, 23);
+            this.Cb4Row.Sorted = true;
             this.Cb4Row.TabIndex = 7;
             this.Cb4Row.SelectedIndexChanged += new System.EventHandler(this.Cb4Row_SelectedIndexChanged);
             // 
@@ -147,6 +150,7 @@ namespace KateFirebird
             this.Cb4CellNum.Location = new System.Drawing.Point(248, 348);
             this.Cb4CellNum.Name = "Cb4CellNum";
             this.Cb4CellNum.Size = new System.Drawing.Size(94, 23);
+            this.Cb4CellNum.Sorted = true;
             this.Cb4CellNum.TabIndex = 8;
             // 
             // Cb2FullName
@@ -155,6 +159,7 @@ namespace KateFirebird
             this.Cb2FullName.Location = new System.Drawing.Point(23, 180);
             this.Cb2FullName.Name = "Cb2FullName";
             this.Cb2FullName.Size = new System.Drawing.Size(121, 23);
+            this.Cb2FullName.Sorted = true;
             this.Cb2FullName.TabIndex = 9;
             // 
             // Nud1Weight
@@ -187,6 +192,7 @@ namespace KateFirebird
             this.Cb1Breed.Location = new System.Drawing.Point(238, 44);
             this.Cb1Breed.Name = "Cb1Breed";
             this.Cb1Breed.Size = new System.Drawing.Size(121, 23);
+            this.Cb1Breed.Sorted = true;
             this.Cb1Breed.TabIndex = 12;
             // 
             // label1

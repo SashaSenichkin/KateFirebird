@@ -29,7 +29,7 @@ namespace KateFirebird
 
         private void BtnGetDietHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(RequestLogic.GetDietByBreedId(Data, CbBreedChoose.SelectedIndex).ToString());
+            MessageBox.Show(RequestLogic.GetDietByBreedId(Data, ((Breed)CbBreedChoose.SelectedItem).Id).ToString());
         }
 
         private void BtnGetReport_Click(object sender, EventArgs e)
@@ -48,15 +48,27 @@ namespace KateFirebird
             result.Append(Environment.NewLine);
             result.Append($"общее количество кур {Data.Chickens.Count}");
             result.Append(Environment.NewLine);
-            //result.Append($"средняя производительность для каждой породы {Data.Chickens.Count}");
+            result.Append($"средняя производительность для каждой породы");
+            result.Append(Environment.NewLine);
+            result.Append(String.Join(Environment.NewLine, Data.Chickens.GroupBy(x => x.BreedId).Select(x => $"породa {x.Key} в среднем {x.Average(y => y.EddCount)} яиц")));
             result.Append(Environment.NewLine);
             result.Append($"общее количество яиц, получаемое птицефабрикой {Data.Chickens.Sum(x => x.EddCount)}");
             result.Append(Environment.NewLine);
             result.Append($"число работниц на фабрике {Data.Workers.Count}");
             result.Append(Environment.NewLine);
-            //result.Append($"распределение работниц по цехам {Data.Chickens.Count}");
+            result.Append($"распределение работниц по цехам:");
+            result.Append(Environment.NewLine);
+
+            var depGroups = Data.Cells.GroupBy(x => x.DepartmentNum).Select(x => String.Join(Environment.NewLine, 
+                                                                            $" в цеху {x.Key + Environment.NewLine} {String.Join(Environment.NewLine, x.Select( y => GetFullNameById(y.WorkerId)))}"));
+            result.Append(String.Join(Environment.NewLine, depGroups));
             return result.ToString();
 
+        }
+
+        private string GetFullNameById(int? id)
+        {
+            return Data.Workers.FirstOrDefault(x => x.Id == id)?.FullName;
         }
     }
 }

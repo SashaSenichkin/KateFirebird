@@ -42,7 +42,7 @@ namespace KateFirebird
                 weigthFrom = weigthFrom - weigthTo;
             }
 
-            var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, Cb1Breed.SelectedIndex, (int)Nud1Age.Value);
+            var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, ((Breed)Cb1Breed.SelectedItem).Id, (int)Nud1Age.Value);
             if (chickens.Any())
                 MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт {x.EddCount} яиц").ToArray()));
             else
@@ -52,7 +52,7 @@ namespace KateFirebird
 
         private void BtnSecondReq_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(RequestLogic.GetDepartmentWithBreed(Data, Cb2Breed.SelectedIndex)?.ToString() ?? "NoData");
+            MessageBox.Show(RequestLogic.GetDepartmentWithBreed(Data, ((Breed)Cb2Breed.SelectedItem).Id)?.ToString() ?? "NoData");
         }
 
 
@@ -61,7 +61,7 @@ namespace KateFirebird
         {
             var result = RequestLogic.GetCellByAgeAndDiet(Data,
                                                          (int)Nud3Age.Value,
-                                                          Cb3Diet.SelectedIndex).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}");
+                                                         (int)Cb3Diet.SelectedItem).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}");
 
             if (result.Any())
                 MessageBox.Show(String.Join(Environment.NewLine, result));
@@ -73,7 +73,7 @@ namespace KateFirebird
 
         private void BtnForthReq_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(RequestLogic.GetEggsCountByWorker(Data, Cb4Worker.SelectedIndex)?.ToString() ?? "NoData");
+            MessageBox.Show(RequestLogic.GetEggsCountByWorker(Data, ((Worker)Cb4Worker.SelectedItem).Id)?.ToString() ?? "NoData");
         }
 
         private void BtnFifthReq_Click(object sender, EventArgs e)
@@ -83,11 +83,17 @@ namespace KateFirebird
 
         private void DirectorPanel_Shown(object sender, EventArgs e)
         {
-            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
-            Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
+            Cb1Breed.DataSource = Data.Breeds;
+            Cb1Breed.DisplayMember = "Name";
+
+            Cb2Breed.DataSource = Data.Breeds;
+            Cb2Breed.DisplayMember = "Name";
             Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList();
+
             Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct().ToList();
-            Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName).ToList();
+
+            Cb4Worker.DataSource = Data.Workers;
+            Cb2Breed.DisplayMember = "FullName";
         }
     }
 }

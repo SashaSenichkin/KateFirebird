@@ -43,25 +43,25 @@ namespace KateFirebird
             Data.AddChicken(new Chicken() {Id = Data.Chickens.Count, 
                                            Age = (int) Nud1Age.Value, 
                                            Weight = (int) Nud1Weight.Value, 
-                                           BreedId = Cb1Breed.SelectedIndex, 
+                                           BreedId = ((Breed)Cb1Breed.SelectedItem).Id, 
                                            CellId = cellId });
         }
 
         private void Btn2RemoveWorker_Click(object sender, EventArgs e)
         {
-            Data.DeleteWorker(Cb2FullName.SelectedIndex);
+            Data.DeleteWorker(((Worker)Cb2FullName.SelectedItem).Id);
         }
 
         private void Btn3ChangeChickenWeight_Click(object sender, EventArgs e)
         {
-            Data.UpdateChickenWeight(Cb3Id.SelectedIndex, (float) Nud3NewWeight.Value);
+            Data.UpdateChickenWeight(((Chicken)Cb3Id.SelectedItem).Id, (float) Nud3NewWeight.Value);
         }
 
         private void Btn4ChangeWeight_Click(object sender, EventArgs e)
         {
-            var cellId = Data.Cells.FirstOrDefault(x => x.DepartmentNum == Cb4Dep.SelectedIndex &&
-                                                        x.RowNum == Cb4Row.SelectedIndex &&
-                                                        x.CellNum == Cb4CellNum.SelectedIndex)?.Id;
+            var cellId = Data.Cells.FirstOrDefault(x => x.DepartmentNum == (int) Cb4Dep.SelectedItem &&
+                                                        x.RowNum == (int) Cb4Row.SelectedItem &&
+                                                        x.CellNum == (int) Cb4CellNum.SelectedItem)?.Id;
 
             var chickenId = Data.Chickens.FirstOrDefault(x => x.CellId == cellId)?.Id;
             if (!chickenId.HasValue)
@@ -76,20 +76,26 @@ namespace KateFirebird
 
         private void Cb4Dep_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cb4Row.DataSource = Data.Cells.Where(x => x.DepartmentNum == Cb4Dep.SelectedIndex).Select(x => x.RowNum).Distinct().ToList();
+            Cb4Row.DataSource = Data.Cells.Where(x => x.DepartmentNum == (int) Cb4Dep.SelectedItem).Select(x => x.RowNum).Distinct().ToList();
 
         }
 
         private void Cb4Row_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cb4CellNum.DataSource = Data.Cells.Where(x => x.DepartmentNum == Cb4Dep.SelectedIndex && x.RowNum == Cb4Row.SelectedIndex).Select(x => x.CellNum).Distinct().ToList();
+            Cb4CellNum.DataSource = Data.Cells.Where(x => x.DepartmentNum == (int) Cb4Dep.SelectedItem && x.RowNum == (int)Cb4Row.SelectedItem).Select(x => x.CellNum).Distinct().ToList();
         }
 
         private void AdminPanel_Shown(object sender, EventArgs e)
         {
-            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
-            Cb2FullName.DataSource = Data.Workers.Select(x => x.FullName).ToList();
-            Cb3Id.DataSource = Data.Chickens.Select(x => x.Id).ToList();
+            Cb1Breed.DataSource = Data.Breeds;
+            Cb1Breed.DisplayMember = "Name";
+
+            Cb2FullName.DataSource = Data.Workers;
+            Cb2FullName.DisplayMember = "FullName";
+
+            Cb3Id.DataSource = Data.Chickens;
+            Cb3Id.DisplayMember = "Id";
+
             Cb4Dep.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList();
         }
     }

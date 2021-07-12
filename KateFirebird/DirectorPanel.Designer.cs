@@ -79,6 +79,7 @@ namespace KateFirebird
             this.Cb1Breed.Location = new System.Drawing.Point(252, 33);
             this.Cb1Breed.Name = "Cb1Breed";
             this.Cb1Breed.Size = new System.Drawing.Size(121, 23);
+            this.Cb1Breed.Sorted = true;
             this.Cb1Breed.TabIndex = 1;
             // 
             // Nud1Age
@@ -164,6 +165,7 @@ namespace KateFirebird
             this.Cb2Breed.Location = new System.Drawing.Point(252, 115);
             this.Cb2Breed.Name = "Cb2Breed";
             this.Cb2Breed.Size = new System.Drawing.Size(121, 23);
+            this.Cb2Breed.Sorted = true;
             this.Cb2Breed.TabIndex = 10;
             // 
             // label8
@@ -181,6 +183,7 @@ namespace KateFirebird
             this.Cb2Department.Location = new System.Drawing.Point(12, 116);
             this.Cb2Department.Name = "Cb2Department";
             this.Cb2Department.Size = new System.Drawing.Size(121, 23);
+            this.Cb2Department.Sorted = true;
             this.Cb2Department.TabIndex = 14;
             // 
             // BtnThirdReq
@@ -199,6 +202,7 @@ namespace KateFirebird
             this.Cb4Worker.Location = new System.Drawing.Point(12, 274);
             this.Cb4Worker.Name = "Cb4Worker";
             this.Cb4Worker.Size = new System.Drawing.Size(121, 23);
+            this.Cb4Worker.Sorted = true;
             this.Cb4Worker.TabIndex = 16;
             // 
             // BtnForthReq
@@ -248,6 +252,7 @@ namespace KateFirebird
             this.Cb3Diet.Location = new System.Drawing.Point(252, 193);
             this.Cb3Diet.Name = "Cb3Diet";
             this.Cb3Diet.Size = new System.Drawing.Size(121, 23);
+            this.Cb3Diet.Sorted = true;
             this.Cb3Diet.TabIndex = 21;
             // 
             // label6
