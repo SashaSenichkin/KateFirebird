@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace KateFirebird
 {
@@ -27,6 +28,21 @@ namespace KateFirebird
                 Cells.Add(cell);
                 Chickens.Add(Chicken.GetRandom(i, Breeds.Count, cell.Id));
             }
+        }
+
+        public void AddChicken(Chicken chicken)
+        {
+            Chickens.Add(chicken);
+        }
+
+        public void DeleteWorker(int id)
+        {
+            Workers.RemoveAll(x => x.Id == id);
+        }
+
+        public void UpdateChickenWeight(int id, float newWeight)
+        {
+            Chickens.First(x => x.Id == id).Weight = newWeight;
         }
     }
 }

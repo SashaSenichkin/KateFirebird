@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace KateFirebird
 {
@@ -11,5 +12,8 @@ namespace KateFirebird
         List<Chicken> Chickens { get; set; }
         List<Worker> Workers { get; set; }
 
+        void AddChicken(Chicken chicken);
+        void DeleteWorker(int id);
+        void UpdateChickenWeight(int selectedIndex, float newWeight);
     }
 }
