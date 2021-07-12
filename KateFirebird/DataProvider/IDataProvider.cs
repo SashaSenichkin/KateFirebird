@@ -14,6 +14,6 @@ namespace KateFirebird
 
         void AddChicken(Chicken chicken);
         void DeleteWorker(int id);
-        void UpdateChickenWeight(int selectedIndex, float newWeight);
+        void UpdateChickenWeight(int selectedId, float newWeight);
     }
 }
