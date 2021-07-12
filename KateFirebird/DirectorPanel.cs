@@ -18,11 +18,6 @@ namespace KateFirebird
         public DirectorPanel()
         {
             InitializeComponent();
-            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
-            Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
-            Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList(); 
-            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct().ToList();
-            Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName).ToList();
         }
 
         private void BtnFirstReq_Click(object sender, EventArgs e)
@@ -84,6 +79,15 @@ namespace KateFirebird
         private void BtnFifthReq_Click(object sender, EventArgs e)
         {
             MessageBox.Show(RequestLogic.GetDepartmentWithMaxEggs(Data)?.ToString() ?? "NoData");
+        }
+
+        private void DirectorPanel_Shown(object sender, EventArgs e)
+        {
+            Cb1Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
+            Cb2Breed.DataSource = Data.Breeds.Select(x => x.Name).ToList();
+            Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList();
+            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct().ToList();
+            Cb4Worker.DataSource = Data.Workers.Select(x => x.FullName).ToList();
         }
     }
 }
