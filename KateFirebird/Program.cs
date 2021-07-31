@@ -23,8 +23,9 @@ namespace KateFirebird
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-             Data = new RandomRata();
-             DirPanel = new DirectorPanel();
+            //Data = new RandomRata();
+            Data = new FirebaseADO();
+            DirPanel = new DirectorPanel();
              AdminPanel = new AdminPanel();
              StartWin = new StartWin();
             Application.Run(StartWin);
