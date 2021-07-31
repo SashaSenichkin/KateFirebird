@@ -4,6 +4,7 @@ using System.Text;
 
 namespace KateFirebird
 {
+    [TableName("Workers")]
     public class Worker
     {
         public int Id;

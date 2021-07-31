@@ -4,13 +4,14 @@ using System.Text;
 
 namespace KateFirebird
 {
+    [TableName("Chickens")]
     public class Chicken
     {
         public int Id;
         public float? Weight;
         public int? Age;
         public int? BreedId;
-        public int EddCount;
+        public int EggCount;
         public int? CellId;
 
         public static Chicken GetRandom(int count, int breedCount, int cellId)
@@ -22,7 +23,7 @@ namespace KateFirebird
                 Weight = r.Next(2, 10),
                 Age = r.Next(0, 3),
                 BreedId = r.Next(1, breedCount),
-                EddCount = r.Next(2, 10),
+                EggCount = r.Next(2, 10),
                 CellId = cellId,
             };
         }
