@@ -29,7 +29,8 @@ namespace KateFirebird
 
         private void BtnGetDietHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(RequestLogic.GetDietByBreedId(Data, ((Breed)CbBreedChoose.SelectedItem).Id).ToString());
+            var breed = Data.Breeds.First(x => x.Name.Equals(CbBreedChoose.SelectedItem));
+            MessageBox.Show(RequestLogic.GetDietByBreedId(Data, breed.Id).ToString());
         }
 
         private void BtnGetReport_Click(object sender, EventArgs e)
@@ -50,9 +51,9 @@ namespace KateFirebird
             result.Append(Environment.NewLine);
             result.Append($"средняя производительность для каждой породы");
             result.Append(Environment.NewLine);
-            result.Append(String.Join(Environment.NewLine, Data.Chickens.GroupBy(x => x.BreedId).Select(x => $"породa {x.Key} в среднем {x.Average(y => y.EddCount)} яиц")));
+            result.Append(String.Join(Environment.NewLine, Data.Chickens.GroupBy(x => x.BreedId).Select(x => $"породa {x.Key} в среднем {x.Average(y => y.EggCount)} яиц")));
             result.Append(Environment.NewLine);
-            result.Append($"общее количество яиц, получаемое птицефабрикой {Data.Chickens.Sum(x => x.EddCount)}");
+            result.Append($"общее количество яиц, получаемое птицефабрикой {Data.Chickens.Sum(x => x.EggCount)}");
             result.Append(Environment.NewLine);
             result.Append($"число работниц на фабрике {Data.Workers.Count}");
             result.Append(Environment.NewLine);

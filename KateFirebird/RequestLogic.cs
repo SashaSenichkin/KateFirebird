@@ -58,7 +58,7 @@ namespace KateFirebird
         /// <returns></returns>
         public static int? GetEggsCountByWorker(IDataProvider data, int workerId)
         {
-            return data.Chickens.Where(x => data.Cells.FirstOrDefault(y => y.Id == x.CellId && y.WorkerId == workerId) != null).Sum(x => x.EddCount);
+            return data.Chickens.Where(x => data.Cells.FirstOrDefault(y => y.Id == x.CellId && y.WorkerId == workerId) != null).Sum(x => x.EggCount);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace KateFirebird
         /// <returns></returns>
         public static int? GetDepartmentWithMaxEggs(IDataProvider data)
         {
-            var maxEggsCell = data.Chickens.OrderByDescending(x => x.EddCount).ToList().FirstOrDefault();
+            var maxEggsCell = data.Chickens.OrderByDescending(x => x.EggCount).ToList().FirstOrDefault();
             return data.Cells.FirstOrDefault(x => x.Id == maxEggsCell?.Id)?.DepartmentNum;
         }
 

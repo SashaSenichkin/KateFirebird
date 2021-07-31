@@ -44,7 +44,7 @@ namespace KateFirebird
 
             var chickens = RequestLogic.GetEggsCountByParams(Data, weigthFrom, weigthTo, ((Breed)Cb1Breed.SelectedItem).Id, (int)Nud1Age.Value);
             if (chickens.Any())
-                MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт {x.EddCount} яиц").ToArray()));
+                MessageBox.Show(String.Join(Environment.NewLine, chickens.Select(x => $"кура {x.Id} (вес {x.Weight}, возраст {x.Age}) несёт {x.EggCount} яиц").ToArray()));
             else
                 MessageBox.Show("не найдено ни одной куры, удолетворяющей запросу");
 
