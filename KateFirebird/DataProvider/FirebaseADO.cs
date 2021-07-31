@@ -17,12 +17,6 @@ namespace KateFirebird
 
         public FirebaseADO()
         {
-            var cb = new StringBuilder();
-            cb.Append("User=SYSDBA;");
-            cb.Append("Password=111;");
-            cb.Append("DataSource=localhost;");
-            cb.Append("Database=KATEFIREBIRD.fdb;");
-
             var t = new FbConnectionStringBuilder();
             t.Database = @"E:\Git\KateFirebird\Db\KATEFIREBIRD.FDB";
             t.DataSource = "localhost";
