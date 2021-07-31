@@ -1,5 +1,5 @@
 CREATE TABLE Breeds(
-	Id integer primary key
+	Id integer primary key,
 	Name nchar(50),
 	AvgProduction float,
 	AvgWeight float,
@@ -10,7 +10,7 @@ CREATE TABLE Workers(
 	Id integer primary key,
 	FullName nchar(100),
 	Salary float
-)
+);
 
 CREATE TABLE Cells(
 	Id integer primary key,
