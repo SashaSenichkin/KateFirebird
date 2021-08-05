@@ -41,8 +41,6 @@ namespace KateFirebird
             this.label7 = new System.Windows.Forms.Label();
             this.BtnSecondReq = new System.Windows.Forms.Button();
             this.Cb2Breed = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Cb2Department = new System.Windows.Forms.ComboBox();
             this.BtnThirdReq = new System.Windows.Forms.Button();
             this.Cb4Worker = new System.Windows.Forms.ComboBox();
             this.BtnForthReq = new System.Windows.Forms.Button();
@@ -75,6 +73,7 @@ namespace KateFirebird
             // 
             // Cb1Breed
             // 
+            this.Cb1Breed.DisplayMember = "Name";
             this.Cb1Breed.FormattingEnabled = true;
             this.Cb1Breed.Location = new System.Drawing.Point(252, 33);
             this.Cb1Breed.Name = "Cb1Breed";
@@ -143,7 +142,7 @@ namespace KateFirebird
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(252, 92);
+            this.label7.Location = new System.Drawing.Point(13, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 15);
             this.label7.TabIndex = 13;
@@ -161,30 +160,13 @@ namespace KateFirebird
             // 
             // Cb2Breed
             // 
+            this.Cb2Breed.DisplayMember = "Name";
             this.Cb2Breed.FormattingEnabled = true;
-            this.Cb2Breed.Location = new System.Drawing.Point(252, 115);
+            this.Cb2Breed.Location = new System.Drawing.Point(13, 115);
             this.Cb2Breed.Name = "Cb2Breed";
             this.Cb2Breed.Size = new System.Drawing.Size(121, 23);
             this.Cb2Breed.Sorted = true;
             this.Cb2Breed.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 15);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "номер цеха";
-            // 
-            // Cb2Department
-            // 
-            this.Cb2Department.FormattingEnabled = true;
-            this.Cb2Department.Location = new System.Drawing.Point(12, 116);
-            this.Cb2Department.Name = "Cb2Department";
-            this.Cb2Department.Size = new System.Drawing.Size(121, 23);
-            this.Cb2Department.Sorted = true;
-            this.Cb2Department.TabIndex = 14;
             // 
             // BtnThirdReq
             // 
@@ -198,6 +180,7 @@ namespace KateFirebird
             // 
             // Cb4Worker
             // 
+            this.Cb4Worker.DisplayMember = "FullName";
             this.Cb4Worker.FormattingEnabled = true;
             this.Cb4Worker.Location = new System.Drawing.Point(12, 274);
             this.Cb4Worker.Name = "Cb4Worker";
@@ -335,11 +318,9 @@ namespace KateFirebird
             this.Controls.Add(this.BtnForthReq);
             this.Controls.Add(this.Cb4Worker);
             this.Controls.Add(this.BtnThirdReq);
-            this.Controls.Add(this.Cb2Department);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnSecondReq);
             this.Controls.Add(this.Cb2Breed);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Tb1WeightTo);
@@ -377,8 +358,6 @@ namespace KateFirebird
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button BtnSecondReq;
         private System.Windows.Forms.ComboBox Cb2Breed;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox Cb2Department;
         private System.Windows.Forms.Button BtnThirdReq;
         private System.Windows.Forms.ComboBox Cb4Worker;
         private System.Windows.Forms.Button BtnForthReq;

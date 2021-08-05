@@ -118,6 +118,7 @@ namespace KateFirebird
             // Cb3Id
             // 
             this.Cb3Id.FormattingEnabled = true;
+            this.Cb3Id.DisplayMember = "Id";
             this.Cb3Id.Location = new System.Drawing.Point(23, 262);
             this.Cb3Id.Name = "Cb3Id";
             this.Cb3Id.Size = new System.Drawing.Size(121, 23);
@@ -156,6 +157,7 @@ namespace KateFirebird
             // Cb2FullName
             // 
             this.Cb2FullName.FormattingEnabled = true;
+            this.Cb2FullName.DisplayMember = "FullName";
             this.Cb2FullName.Location = new System.Drawing.Point(23, 180);
             this.Cb2FullName.Name = "Cb2FullName";
             this.Cb2FullName.Size = new System.Drawing.Size(121, 23);
@@ -188,6 +190,7 @@ namespace KateFirebird
             // 
             // Cb1Breed
             // 
+            this.Cb1Breed.DisplayMember = "Name";
             this.Cb1Breed.FormattingEnabled = true;
             this.Cb1Breed.Location = new System.Drawing.Point(238, 44);
             this.Cb1Breed.Name = "Cb1Breed";
