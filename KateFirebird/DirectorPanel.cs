@@ -53,18 +53,25 @@ namespace KateFirebird
         private void BtnSecondReq_Click(object sender, EventArgs e)
         {
             MessageBox.Show(RequestLogic.GetDepartmentWithBreed(Data, ((Breed)Cb2Breed.SelectedItem).Id)?.ToString() ?? "NoData");
+
         }
 
 
 
         private void BtnThirdReq_Click(object sender, EventArgs e)
         {
+            if (Cb3Diet.SelectedItem == null)
+            {
+                MessageBox.Show("выберите диету");
+                return;
+            }
+
             var result = RequestLogic.GetCellByAgeAndDiet(Data,
                                                          (int)Nud3Age.Value,
-                                                         (int)Cb3Diet.SelectedItem).Select(x => $"клетка {x.CellNum} в ряду {x.RowNum} в цеху {x.DepartmentNum}");
+                                                         int.Parse((string)Cb3Diet.SelectedItem));
 
             if (result.Any())
-                MessageBox.Show(String.Join(Environment.NewLine, result));
+                MessageBox.Show(String.Join(Environment.NewLine, result.Select(x => x.Id)));
             else
                 MessageBox.Show("не найдено ни одной клетки, удолетворяющей запросу");
 
@@ -84,16 +91,14 @@ namespace KateFirebird
         private void DirectorPanel_Shown(object sender, EventArgs e)
         {
             Cb1Breed.DataSource = Data.Breeds;
-            Cb1Breed.DisplayMember = "Name";
 
             Cb2Breed.DataSource = Data.Breeds;
-            Cb2Breed.DisplayMember = "Name";
-            Cb2Department.DataSource = Data.Cells.Select(x => x.DepartmentNum).Distinct().ToList();
 
-            Cb3Diet.DataSource = Data.Breeds.Select(x => x.DietId).Distinct().ToList();
+            Cb3Diet.Items.Clear();
+            Cb3Diet.Items.AddRange(Data.Breeds.Select(x => x.DietId.ToString()).Distinct().ToArray());
 
             Cb4Worker.DataSource = Data.Workers;
-            Cb2Breed.DisplayMember = "FullName";
+
         }
     }
 }
