@@ -27,5 +27,10 @@ namespace KateFirebird
                 CellId = cellId,
             };
         }
+
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
     }
 }

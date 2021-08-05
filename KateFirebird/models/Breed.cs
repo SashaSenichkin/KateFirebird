@@ -25,5 +25,10 @@ namespace KateFirebird
                 DietId = r.Next(1, dietCount)
             };
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

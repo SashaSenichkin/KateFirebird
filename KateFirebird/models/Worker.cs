@@ -21,5 +21,9 @@ namespace KateFirebird
                 Salary = r.Next(0, 100)
             };
         }
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }
